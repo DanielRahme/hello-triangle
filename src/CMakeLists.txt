@@ -13,7 +13,6 @@ target_link_options(${TargetName} PRIVATE -Wl,--gc-sections)
 target_compile_options(${TargetName} 
 PRIVATE
     -O3
-    -Werror
     -Wall
     -Wextra
     -Wpedantic
