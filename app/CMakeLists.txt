@@ -22,5 +22,5 @@ create_app(triangle_gles)
 target_link_libraries(triangle_gles PRIVATE lib glad glfw)
 
 create_app(triangle_vulkan)
-target_link_libraries(triangle_vulkan PRIVATE lib glad glfw)
+target_link_libraries(triangle_vulkan PRIVATE lib Vulkan::Headers glad glfw glm)
 
