@@ -1,23 +1,28 @@
-# Add the executable target
-set(TargetName hello)
+# CMakeLists file for libraries
 
-add_executable(${TargetName} main.cpp)
+set(LibName lib)
 
-# Link with libraries from src/lib
-target_link_libraries(${TargetName} PRIVATE lib glad glfw)
+add_library(${LibName} functions.cpp)
 
-target_compile_features(${TargetName} PRIVATE cxx_std_20)
+# Link with the header files in include folder
+target_include_directories(${LibName} PUBLIC ${PROJECT_SOURCE_DIR}/include)
 
-target_link_options(${TargetName} PRIVATE -Wl,--gc-sections)
+# Set the language standard to C++20 for library
+target_compile_features(${LibName} PRIVATE cxx_std_20)
 
-target_compile_options(${TargetName} 
+# Compiler flags for library
+target_compile_options(${LibName} 
+PUBLIC
+    -fdata-sections
+    -ffunction-sections
 PRIVATE
     -O3
+    -Werror
     -Wall
     -Wextra
     -Wpedantic
-    -fdata-sections
-    -ffunction-sections
-    -flto
+    -Wshadow
+    -Wdouble-promotion
+    -Wconversion
+    -fno-common
     )
-

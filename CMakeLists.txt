@@ -15,10 +15,18 @@ list(APPEND CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake")
 find_package(doctest)
 find_package(glad)
 find_package(glfw)
+find_package(glm)
+find_package(googletest)
+find_package(glslang)
+find_package(spirv)
+find_package(glslc)
+find_package(Vulkan)
+find_package(VulkanHeaders)
+find_package(buildVulkan)
 
 # Add the CMakeFiles in the other directories
-add_subdirectory(lib)
 add_subdirectory(src)
+add_subdirectory(app)
 
 ### Enable testing
 if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
