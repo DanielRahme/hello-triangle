@@ -18,4 +18,4 @@ FetchContent_Declare(
 )
 
 #FetchContent_MakeAvailable(vulkan_tools)
-#FetchContent_MakeAvailable(vulkan_tools vulkan_validation_layers vulkan_loader)
+FetchContent_MakeAvailable(vulkan_tools vulkan_validation_layers vulkan_loader)

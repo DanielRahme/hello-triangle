@@ -6,3 +6,5 @@ FetchContent_Declare(
   GIT_TAG main
 )
 FetchContent_MakeAvailable(vulkan_headers)
+
+set(Vulkan_INCLUDE_DIR ${vulkan_headers_SOURCE_DIR}/include)

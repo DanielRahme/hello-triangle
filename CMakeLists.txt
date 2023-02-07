@@ -12,15 +12,16 @@ project(Hello
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake")
 
 ### Packages
-find_package(VulkanHeaders)
+find_package(VulkanSdk)
+#find_package(VulkanHeaders)
 find_package(doctest)
 find_package(glad)
 find_package(glfw)
 find_package(glm)
-find_package(googletest)
-find_package(glslang)
-find_package(spirv)
-find_package(glslc)
+#find_package(googletest)
+#find_package(glslang)
+#find_package(spirv)
+#find_package(glslc)
 #find_package(buildVulkan)
 
 # Add the CMakeFiles in the other directories
