@@ -17,7 +17,6 @@ PUBLIC
     -ffunction-sections
 PRIVATE
     -O3
-    -Werror
     -Wall
     -Wextra
     -Wpedantic

@@ -7,7 +7,7 @@
 
 #include <functions.hpp>
 
-unsigned int func::square(const int x)
+int func::square(const int x)
 {
   return x * x;
 }

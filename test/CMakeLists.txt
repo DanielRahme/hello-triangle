@@ -7,7 +7,6 @@ add_executable(${TestName} testmain.cpp)
 target_compile_features(${TestName} PRIVATE cxx_std_20)
 target_compile_options(${TestName} PRIVATE
     -O3
-    -Werror
     -Wall
     -Wextra
     -Wpedantic

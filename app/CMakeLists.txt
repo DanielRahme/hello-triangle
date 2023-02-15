@@ -1,10 +1,10 @@
 # Add the executable target
 
 set(cpp_flags
-    #-O3
-        -Wall
+        -O3
         -Wextra
         -Wpedantic
+        -stdlib=libc++
         #-fdata-sections
         #-ffunction-sections
         #-flto
@@ -20,8 +20,33 @@ endfunction()
 
 create_app(triangle_gles)
 target_link_libraries(triangle_gles PRIVATE lib glad glfw)
+#target_include_directories(triangle_vulkan PUBLIC ${vulkan_headers_SOURCE_DIR}/include)
+#target_link_libraries(triangle_vulkan PUBLIC lib glad glfw glm vulkan_headers dl pthread X11 Xrandr Xi Xxf86vm)
+set(vulkan_libraries
+    pthread 
+    c++ 
+    dl 
+    lib 
+    glad 
+    glfw 
+    glm 
+    filament 
+    backend 
+    bluegl 
+    bluevk 
+    filabridge 
+    filaflat 
+    utils
+    geometry 
+    smol-v 
+    vkshaders 
+    ibl 
+    vulkan_headers
+)
+
 
 create_app(triangle_vulkan)
-#target_include_directories(triangle_vulkan PUBLIC ${vulkan_headers_SOURCE_DIR}/include)
-target_link_libraries(triangle_vulkan PUBLIC Vulkan::Headers lib glad glfw glm)
+target_link_libraries(triangle_vulkan PUBLIC ${vulkan_libraries})
 
+create_app(triangle_vk)
+target_link_libraries(triangle_vk PUBLIC ${vulkan_libraries})

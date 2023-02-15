@@ -13,7 +13,7 @@
 namespace func
 {
   // Function declarations
-  unsigned int square(const int x);
+  int square(const int x);
 
   // Templates
   template<typename T>
