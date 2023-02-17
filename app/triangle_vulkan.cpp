@@ -1,8 +1,4 @@
 //#define GLFW_INCLUDE_VULKAN
-#include <vulkan/vulkan.hpp>
-#include <vulkan/vulkan.h>
-#include <vulkan/vk_layer.h>
-#include <vulkan/vulkan_core.h>
 
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
@@ -19,6 +15,12 @@
 #include <array>
 #include <optional>
 #include <set>
+#include <filament/FilamentAPI.h>
+#include <filament/Engine.h>
+//#include "vulkan/vulkan.h"
+#include "vulkan/vulkan.hpp"
+#include "vulkan/vk_layer.h"
+#include "vulkan/vulkan_core.h"
 
 const uint32_t WIDTH = 800;
 const uint32_t HEIGHT = 600;
@@ -37,7 +39,7 @@ const std::vector<const char*> deviceExtensions = {
 const bool enableValidationLayers = false;
 #else
 const bool enableValidationLayers = true;
-#endif
+#endif  
 
 VkResult CreateDebugUtilsMessengerEXT(VkInstance instance, const VkDebugUtilsMessengerCreateInfoEXT* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkDebugUtilsMessengerEXT* pDebugMessenger) {
     auto func = (PFN_vkCreateDebugUtilsMessengerEXT) vkGetInstanceProcAddr(instance, "vkCreateDebugUtilsMessengerEXT");
