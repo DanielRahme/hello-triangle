@@ -4,6 +4,7 @@ set(cpp_flags
         -Wextra
         -Wpedantic
         -stdlib=libc++
+        -lc++abi
         -fdata-sections
         -ffunction-sections
         -flto
@@ -47,7 +48,7 @@ function (create_app app_name)
     #target_include_directories(${app_name} PUBLIC filament_resources)
 endfunction()
 
-create_app(triangle_gles)
-create_app(triangle_vulkan)
-create_app(triangle_vk)
+#create_app(triangle_gles)
+#create_app(triangle_vulkan)
+#create_app(triangle_vk)
 create_app(hello_triangle)

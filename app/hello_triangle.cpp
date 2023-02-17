@@ -33,7 +33,8 @@
 
 #include <cmath>
 
-#include "generated/resources/resources.h"
+//#include "generated/resources/resources.h"
+#include "resources.h"
 
 
 using namespace filament;
